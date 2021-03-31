@@ -48,13 +48,13 @@ public class Main {
         int f = (i+1)*delta-1;
         System.out.println("Creating point1");
         point p = info.createPoint();
-        TimeUnit.MINUTES.sleep(1);
+        TimeUnit.SECONDS.sleep(1);
         System.out.println("Creating channel1");
         channel c =p.createChannel();
-        TimeUnit.MINUTES.sleep(1);
+        TimeUnit.SECONDS.sleep(1);
         System.out.println("Execute point1");
         p.execute("Algo");
-        TimeUnit.MINUTES.sleep(1);
+        TimeUnit.SECONDS.sleep(1);
         c.write(target);
         c.write(s);
         c.write(f);
@@ -64,11 +64,13 @@ public class Main {
         s = i*delta;
         f = (i+1)*delta-1;
         System.out.println("Creating point2");
-
         point p2 = info.createPoint();
+        TimeUnit.SECONDS.sleep(1);
         System.out.println("Creating channel2");
         channel c2 =p2.createChannel();
+        TimeUnit.SECONDS.sleep(1);
         p2.execute("Algo");
+        TimeUnit.SECONDS.sleep(1);
         c2.write(target);
         c2.write(s);
         c2.write(f);
