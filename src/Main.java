@@ -52,8 +52,8 @@ public class Main {
             System.out.println("\n\n\n\n Processing point" + String.valueOf(i));
             i++;
 
-            List<String> out_list = (List<String>) channel.readObject();
-            list.addAll(out_list);
+            String out_list = (String) channel.readObject();
+            list.add(out_list);
 
 
         }
