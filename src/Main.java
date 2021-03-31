@@ -8,11 +8,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         task curtask = new task();
         curtask.addJarFile("Algo.jar");
 
@@ -47,10 +48,13 @@ public class Main {
         int f = (i+1)*delta-1;
         System.out.println("Creating point1");
         point p = info.createPoint();
+        TimeUnit.MINUTES.sleep(1);
         System.out.println("Creating channel1");
         channel c =p.createChannel();
+        TimeUnit.MINUTES.sleep(1);
         System.out.println("Execute point1");
         p.execute("Algo");
+        TimeUnit.MINUTES.sleep(1);
         c.write(target);
         c.write(s);
         c.write(f);
@@ -60,6 +64,7 @@ public class Main {
         s = i*delta;
         f = (i+1)*delta-1;
         System.out.println("Creating point2");
+
         point p2 = info.createPoint();
         System.out.println("Creating channel2");
         channel c2 =p2.createChannel();
