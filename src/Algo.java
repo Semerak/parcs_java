@@ -61,6 +61,8 @@ public class Algo implements AM{
         Integer start = (Integer) info.parent.readObject();
         Integer finish = (Integer) info.parent.readObject();
 
+        System.out.println("Started "+ String.valueOf(start)+" - "+ String.valueOf(finish));
+
         List<String> res = null;
         try {
             res = finder(target,start,finish);
@@ -68,6 +70,7 @@ public class Algo implements AM{
 
         }
         String out = String.join(", ", res);
+        System.out.println("Finished "+ String.valueOf(start)+" - "+ String.valueOf(finish));
         info.parent.write(out);
 
 
