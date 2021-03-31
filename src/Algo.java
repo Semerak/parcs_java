@@ -36,7 +36,7 @@ public class Algo implements AM{
         System.out.println(sha3Hex);
     }
 
-    private static List<String> finder(String target, int start, int finish) throws NoSuchAlgorithmException{
+    private static List<String> finder(String target, int start, int finish) throws Exception{
 
         List<String> list=new ArrayList<String>();
         for(int i=start;i<=finish;i++) {
@@ -66,9 +66,10 @@ public class Algo implements AM{
         List<String> res = null;
         try {
             res = finder(target,start,finish);
-        } catch (NoSuchAlgorithmException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
+
 
         String out = String.join(", ", res);
         System.out.println("Finished "+ String.valueOf(start)+" - "+ String.valueOf(finish));

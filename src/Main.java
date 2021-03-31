@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class Main {
 
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws Exception {
         task curtask = new task();
         curtask.addJarFile("Algo.jar");
 
@@ -51,6 +51,7 @@ public class Main {
         TimeUnit.SECONDS.sleep(1);
         System.out.println("Creating channel1");
         channel c =p.createChannel();
+        channels.add(c);
         TimeUnit.SECONDS.sleep(1);
         System.out.println("Execute point1");
         p.execute("Algo");
@@ -58,7 +59,7 @@ public class Main {
         c.write(target);
         c.write(s);
         c.write(f);
-        channels.add(c);
+
 
         i=1;
         s = i*delta;
@@ -68,13 +69,14 @@ public class Main {
         TimeUnit.SECONDS.sleep(1);
         System.out.println("Creating channel2");
         channel c2 =p2.createChannel();
+        channels.add(c2);
         TimeUnit.SECONDS.sleep(1);
         p2.execute("Algo");
         TimeUnit.SECONDS.sleep(1);
         c2.write(target);
         c2.write(s);
         c2.write(f);
-        channels.add(c2);
+
         
 
 
