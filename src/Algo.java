@@ -64,8 +64,8 @@ public class Algo implements AM{
         List<String> res = null;
         try {
             res = finder(target,start,finish);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+        } catch (NoSuchAlgorithmException ignored) {
+
         }
         String out = String.join(", ", res);
         info.parent.write(out);
