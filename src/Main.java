@@ -45,8 +45,11 @@ public class Main {
         int i=0;
         int s = i*delta;
         int f = (i+1)*delta-1;
+        System.out.println("Creating point1");
         point p = info.createPoint();
+        System.out.println("Creating channel1");
         channel c =p.createChannel();
+        System.out.println("Execute point1");
         p.execute("Algo");
         c.write(target);
         c.write(s);
@@ -56,7 +59,9 @@ public class Main {
         i=1;
         s = i*delta;
         f = (i+1)*delta-1;
+        System.out.println("Creating point2");
         point p2 = info.createPoint();
+        System.out.println("Creating channel2");
         channel c2 =p2.createChannel();
         p2.execute("Algo");
         c2.write(target);
