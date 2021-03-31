@@ -28,7 +28,7 @@ public class Main {
         long startTime = System.nanoTime();
 
         List<channel> channels = new ArrayList<>();
-
+        List<String> list=new ArrayList<String>();
         int delta = (global_finish- global_start)/n;
         for(int i = 0; i<n;i++){
             int s = i*delta;
@@ -40,23 +40,25 @@ public class Main {
             c.write(s);
             c.write(f);
             channels.add(c);
+            String out = (String)c.readObject();
+            System.out.println(out);
+            list.add(out);
 
         }
         
 
 
 
-        int i = 1;
-        List<String> list=new ArrayList<String>();
-        for (parcs.channel channel : channels) {
-            System.out.println("\n\n\n\n Processing point" + String.valueOf(i));
-            i++;
-
-            String out_list = (String) channel.readObject();
-            list.add(out_list);
-
-
-        }
+//        int i = 1;
+//        for (parcs.channel channel : channels) {
+//            System.out.println("\n\n\n\n Processing point" + String.valueOf(i));
+//            i++;
+//
+//            String out_list = (String) channel.readObject();
+//            list.add(out_list);
+//
+//
+//        }
 
         double estimatedTime = (double) (System.nanoTime() - startTime) / 1000000000;
         System.out.println("Time total (excluding IO): " + estimatedTime);
