@@ -67,7 +67,8 @@ public class Algo implements AM{
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-        info.parent.write((Serializable) res);
+        String out = String.join(", ", res);
+        info.parent.write(out);
 
 
 
