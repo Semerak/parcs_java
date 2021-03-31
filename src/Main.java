@@ -18,7 +18,7 @@ public class Main {
 
         AMInfo info = new AMInfo(curtask, null);
 
-        String[] file = readLines("out/input.txt");
+        String[] file = readLines("input.txt");
         String target = file[0];
         int global_start = Integer.parseInt(file[1]);
         int global_finish = Integer.parseInt(file[2]);
